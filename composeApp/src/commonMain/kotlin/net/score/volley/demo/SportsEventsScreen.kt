@@ -54,9 +54,9 @@ object SportsEventsScreen : Screen {
                     Column(modifier = Modifier.padding(16.dp)) {
                         Text(event.name, style = MaterialTheme.typography.titleMedium)
                         Spacer(Modifier.height(4.dp))
-                        Text("Level: ${'$'}{event.playerLevel}")
-                        Text("Starts: ${'$'}{event.startTime}")
-                        Text("Needed participants: ${'$'}{event.requiredParticipants}")
+                        Text("Level: ${event.playerLevel}")
+                        Text("Starts: ${event.startTime}")
+                        Text("Needed participants: ${event.requiredParticipants}")
                     }
                 }
             }

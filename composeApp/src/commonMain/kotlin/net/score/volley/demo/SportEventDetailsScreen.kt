@@ -28,9 +28,9 @@ data class SportEventDetailsScreen(val event: SportEvent) : Screen {
         ) {
             Text(event.name, style = MaterialTheme.typography.titleLarge)
             Spacer(Modifier.height(8.dp))
-            Text("Level: ${'$'}{event.playerLevel}")
-            Text("Starts: ${'$'}{event.startTime}")
-            Text("Needed participants: ${'$'}{event.requiredParticipants}")
+            Text("Level: ${event.playerLevel}")
+            Text("Starts: ${event.startTime}")
+            Text("Needed participants: ${event.requiredParticipants}")
             Spacer(Modifier.height(24.dp))
             Button(onClick = { navigator.pop() }) {
                 Text("Back")

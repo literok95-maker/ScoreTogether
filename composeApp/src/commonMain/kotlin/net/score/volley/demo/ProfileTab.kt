@@ -20,7 +20,7 @@ object ProfileTab : Tab {
             return TabOptions(
                 index = 1u,
                 title = "Мой профиль",
-                icon = icon
+                icon = icon,
             )
         }
 
@@ -31,4 +31,3 @@ object ProfileTab : Tab {
         }
     }
 }
-

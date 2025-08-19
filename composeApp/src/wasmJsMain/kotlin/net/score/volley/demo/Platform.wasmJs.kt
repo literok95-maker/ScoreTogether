@@ -1,3 +1,5 @@
+@file:Suppress("MatchingDeclarationName")
+
 package net.score.volley.demo
 
 class WasmPlatform : Platform {

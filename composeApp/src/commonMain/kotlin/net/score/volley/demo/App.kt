@@ -11,6 +11,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
+@Suppress("FunctionName")
 fun App() {
     MaterialTheme {
         TabNavigator(SportsEventsTab) {
@@ -20,7 +21,7 @@ fun App() {
                         TabNavigationItem(SportsEventsTab)
                         TabNavigationItem(ProfileTab)
                     }
-                }
+                },
             ) {
                 CurrentTab()
             }

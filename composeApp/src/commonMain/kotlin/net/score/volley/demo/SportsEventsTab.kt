@@ -1,7 +1,12 @@
 package net.score.volley.demo
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -9,8 +14,12 @@ import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
@@ -19,7 +28,6 @@ import cafe.adriel.voyager.navigator.tab.TabOptions
 import net.score.volley.demo.data.InMemorySportEventRepository
 import net.score.volley.demo.domain.GetSportEventsUseCase
 import net.score.volley.demo.presentation.SportsEventsViewModel
-import androidx.compose.ui.graphics.vector.rememberVectorPainter
 
 object SportsEventsTab : Tab {
     override val options: TabOptions
@@ -29,7 +37,7 @@ object SportsEventsTab : Tab {
             return TabOptions(
                 index = 0u,
                 title = "Мои события",
-                icon = icon
+                icon = icon,
             )
         }
 
@@ -42,16 +50,18 @@ object SportsEventsTab : Tab {
         val navigator = LocalNavigator.currentOrThrow
 
         LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp)
+            modifier =
+                Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
         ) {
             items(events) { event ->
                 Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 8.dp)
-                        .clickable { navigator.push(SportEventDetailsScreen(event)) }
+                    modifier =
+                        Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 8.dp)
+                            .clickable { navigator.push(SportEventDetailsScreen(event)) },
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
                         Text(event.name, style = MaterialTheme.typography.titleMedium)

@@ -4,20 +4,35 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
+import cafe.adriel.voyager.navigator.tab.Tab
+import cafe.adriel.voyager.navigator.tab.TabOptions
 import net.score.volley.demo.data.InMemorySportEventRepository
 import net.score.volley.demo.domain.GetSportEventsUseCase
 import net.score.volley.demo.presentation.SportsEventsViewModel
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 
-object SportsEventsScreen : Screen {
+object SportsEventsTab : Tab {
+    override val options: TabOptions
+        @Composable
+        get() {
+            val icon = rememberVectorPainter(Icons.Filled.List)
+            return TabOptions(
+                index = 0u,
+                title = "Мои события",
+                icon = icon
+            )
+        }
+
     @Composable
     override fun Content() {
         val repository = remember { InMemorySportEventRepository() }

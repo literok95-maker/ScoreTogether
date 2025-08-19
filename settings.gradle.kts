@@ -28,4 +28,14 @@ dependencyResolutionManagement {
     }
 }
 
-include(":composeApp")
+include(
+    ":shared:app",
+    ":shared:domain",
+    ":shared:data",
+    ":shared:network",
+    ":shared:db",
+    ":shared:di",
+    ":app-android",
+    ":app-ios",
+    ":app-web",
+)

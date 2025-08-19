@@ -9,5 +9,5 @@ import net.score.volley.demo.data.SportEventRepository
 class GetSportEventsUseCase(
     private val repository: SportEventRepository,
 ) {
-    operator fun invoke(): List<SportEvent> = repository.getEvents().filter { it.name.isNotEmpty() }
+    operator fun invoke(): List<SportEvent> = repository.getEvents()
 }

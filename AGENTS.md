@@ -42,7 +42,6 @@ ANDROID_SDK_ROOT=/workspace/android-sdk
 ANDROID_HOME=/workspace/android-sdk
 PATH=$ANDROID_SDK_ROOT/cmdline-tools/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH
 ```
-Либо отключить `android()` и собирать только `commonMain`.
 
 ---
 

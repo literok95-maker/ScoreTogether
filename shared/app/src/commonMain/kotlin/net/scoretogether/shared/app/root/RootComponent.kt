@@ -35,6 +35,7 @@ class DefaultRootComponent(
             serializer = null,
             initialStack = { listOf(Unit) },
             handleBackButton = true,
+            key = "DiscoverStack",
             childFactory = { _: Unit, ctx: ComponentContext -> DefaultDiscoverComponent(ctx) },
         )
 
@@ -45,6 +46,7 @@ class DefaultRootComponent(
             serializer = null,
             initialStack = { listOf(Unit) },
             handleBackButton = true,
+            key = "OrganizerStack",
             childFactory = { _: Unit, ctx: ComponentContext -> DefaultOrganizerComponent(ctx) },
         )
 

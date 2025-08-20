@@ -18,6 +18,7 @@ kotlin {
             dependencies {
                 implementation(compose.ui)
                 implementation(project(":shared:app"))
+                implementation(project(":shared:di"))
             }
         }
     }

@@ -17,6 +17,7 @@ kotlin {
         val wasmJsMain by getting {
             dependencies {
                 implementation(compose.ui)
+                implementation(libs.koin.core)
                 implementation(project(":shared:app"))
                 implementation(project(":shared:di"))
             }

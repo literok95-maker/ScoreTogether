@@ -26,7 +26,7 @@
 - **JDK**: 17
 - **Android Studio**: Iguana/Jellyfish+
 - **AGP**: см. `gradle-wrapper.properties`
-- **Kotlin**: 1.9–2.0
+- **Kotlin**: последние стабильные версии
 - **Android SDK**: API 34 (`build-tools;34.0.0`)
 
 Команды:
